@@ -3,7 +3,7 @@ REM List le contenu du dex
 java -jar baksmali-2.5.2.jar list dex .\supl20\PRA\gnss_supl20service_hisi.odex
 
 REM Genere les fichier smali 
-java -jar baksmali-2.5.2.jar deodex -a 26 -o .\supl20\PRA\src-out -c boot.oat -d  ..\..\sdk26\framework\arm64 .\supl20\PRA\gnss_supl20service_hisi.odex
+java -jar baksmali-2.5.2.jar deodex -a 26 -o .\supl20\PRA\src-out -c boot.oat -d  ..\vndk26\framework\arm64 .\supl20\PRA\gnss_supl20service_hisi.odex
 
 REM Decompile APK, extrait le manifest dans le repertoire cible
 java -jar apktool_2.6.0.jar decode -f -o .\supl20\PRA\apk-out .\supl20\PRA\gnss_supl20service_hisi.apk
