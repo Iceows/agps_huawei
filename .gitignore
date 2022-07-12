@@ -1,0 +1,16 @@
+vndk26/*
+vndk27/*
+vndk30/*
+gnss_supl20service_hisi/supl20-new/apk-out/*
+gnss_supl20service_hisi/supl20/PRA/apk-out/*
+gnss_supl20service_hisi/supl20/PRA/src-out/*
+gnss_supl20service_hisi/supl20/WAS/apk-out/*
+gnss_supl20service_hisi/supl20/WAS/src-out/*
+gnss_supl20service_hisi/supl20/FIG/apk-out/*
+gnss_supl20service_hisi/supl20/FIG/src-out/*
+gnss_supl20service_hisi/supl20/ANE/apk-out/*
+gnss_supl20service_hisi/supl20/ANE/apk-out2/*
+gnss_supl20service_hisi/supl20/ANE/src-out/*
+gnss_supl20service_hisi/supl20/PRA/src-out/*
+*.smali
+gnss_supl20service_hisi/supl20/PRA/src-out/com/android/supl/loc/SetID.smali
