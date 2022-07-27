@@ -2395,7 +2395,7 @@
 
     iget-object v1, p0, Lcom/android/supl/commprocessor/ServerCommProcessor;->mReceiver:Lcom/android/supl/commprocessor/ServerCommProcessor$ConnectivityBroadcastReceiver;
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterComponentCallbacks(Landroid/content/ComponentCallbacks;)V
 
     .line 153
     const/4 v0, 0x0

@@ -113,7 +113,7 @@
     iput-object p1, p0, Lcom/android/supl/loc/SUPLPlatformService;->mContext:Landroid/content/Context;
 
     .line 75
-    invoke-virtual {p0}, Lcom/android/supl/loc/SUPLPlatformService;->onCreate()V
+    invoke-virtual {p0}, Landroid/app/Service;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     .line 76
     return-void

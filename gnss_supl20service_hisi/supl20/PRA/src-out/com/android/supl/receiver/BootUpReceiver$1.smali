@@ -61,7 +61,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+    invoke-virtual {v1, v0}, Landroid/content/Context;->startIntentSender(Landroid/content/IntentSender;Landroid/content/Intent;IIILandroid/os/Bundle;)V
 
     .line 95
     invoke-static {}, Lcom/android/supl/receiver/BootUpReceiver;->-get0()Ljava/lang/String;
@@ -94,7 +94,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+    invoke-virtual {v1, v0}, Landroid/content/Context;->startIntentSender(Landroid/content/IntentSender;Landroid/content/Intent;IIILandroid/os/Bundle;)V
 
     .line 99
     invoke-static {}, Lcom/android/supl/receiver/BootUpReceiver;->-get0()Ljava/lang/String;

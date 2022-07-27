@@ -79,7 +79,7 @@
 
     .line 65
     .local v1, "serviceIntent":Landroid/content/Intent;
-    invoke-virtual {p1, v1}, Landroid/content/Context;->stopService(Landroid/content/Intent;)Z
+    invoke-virtual {p1, v1}, Landroid/content/Context;->startServiceAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)Landroid/content/ComponentName;
 
     .line 67
     new-instance v1, Landroid/content/Intent;
@@ -91,7 +91,7 @@
 
     .line 68
     .restart local v1    # "serviceIntent":Landroid/content/Intent;
-    invoke-virtual {p1, v1}, Landroid/content/Context;->stopService(Landroid/content/Intent;)Z
+    invoke-virtual {p1, v1}, Landroid/content/Context;->startServiceAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)Landroid/content/ComponentName;
 
     .line 70
     const-string/jumbo v2, "HISI_LOG"

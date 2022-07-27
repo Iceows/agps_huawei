@@ -164,7 +164,7 @@
     iput-object p1, p0, Lcom/android/supl/commprocessor/SUPLSCMService;->mContext:Landroid/content/Context;
 
     .line 49
-    invoke-virtual {p0}, Lcom/android/supl/commprocessor/SUPLSCMService;->onCreate()V
+    invoke-virtual {p0}, Landroid/app/Service;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     .line 50
     return-void
