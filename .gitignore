@@ -1,1 +1,3 @@
 gnss_supl20service_hisi/supl20/*
+gnss_supl20service_hisi/app/.gradle/*
+gnss_supl20service_hisi/app/.idea/*
