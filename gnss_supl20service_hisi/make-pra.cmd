@@ -11,15 +11,9 @@ java -jar baksmali-2.5.2.jar deodex -a 26 -o .\supl20\PRA\src-out -c boot.oat -d
 REM Decompile APK, extrait le manifest dans le repertoire cible
 java -jar apktool_2.6.0.jar decode -f -o .\supl20\PRA\apk-out .\original\PRA\gnss_supl20service_hisi.apk
 
-
-REM ---------------------------------------------------------------------------------------
-
-
 REM Recopie le nouveau fichier CopyArrayMod.smali (fix arraycopy bug java/lang/System)
 mkdir .\supl20\PRA\src-out\com\android\altair\
 xcopy /Y .\modded\CopyArrayMod.smali .\supl20\PRA\src-out\com\android\altair\
-
-REM ---------------------------------------------------------------------------------------
 
 REM Sous Notepad, remplacer dans tous les fichiers smali, la chaine, a voir si on peut pas le faire avec sed (133 occurences)
 REM	Ljava/lang/System;->arraycopy([BI[BII)V 
@@ -39,7 +33,7 @@ REM java -jar smali-2.5.2.jar a --api 30 .\supl20\PRA\src-out -o .\supl20\PRA\ap
 REM Recompile APK  dans le repertoire cible
 java -jar apktool_2.6.0.jar build -o .\supl20\PRA\recompiled.apk  .\supl20\PRA\apk-out
 
-REM Sign this plateform signature
+REM Sign this plateform signature (peut-etre utilisé plutot shared.pk8)
 java -jar "ApkSigner.jar" sign  --key platform.pk8 --cert platform.x509.pem  --v4-signing-enabled false --out ".\supl20\PRA\gnss_supl20service_hisi_signed.apk" ".\supl20\PRA\recompiled.apk"
 
 REM signapk -a 4 $2/shared.x509.pem $2/shared.pk8 HwCamera2.apk HwCamera2.signed.apk

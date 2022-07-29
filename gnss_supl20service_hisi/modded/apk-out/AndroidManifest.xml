@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:sharedUserId="android.uid.system" package="com.android.supl">
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <application android:allowBackup="false" android:extractNativeLibs="false" android:label="SUPL20Services" android:name="com.android.supl.SuplApplication" android:persistent="true"/>
-</manifest>
