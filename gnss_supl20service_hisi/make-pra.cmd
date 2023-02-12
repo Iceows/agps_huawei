@@ -41,8 +41,9 @@ REM -------------------------------------------------
 
 REM Recopie le nouveau fichier ConfigManager avec le chemin vers system
 REM "/system/etc/gnss/config/gnss_suplconfig_hisi.xml"
-xcopy /Y .\modded\ConfigManager.smali  .\supl20\PRA\src-out\com\android\supl\config\
+REM xcopy /Y .\modded\ConfigManager.smali  .\supl20\PRA\src-out\com\android\supl\config\
 
+sed-4.7-x64.exe -i -e "s/\/vendor\/etc\/gnss\/config\/gnss_suplconfig_hisi.xml/\/system\/etc\/gnss\/config\/gnss_suplconfig_hisi.xml/g" .\supl20\PRA\src-out\com\android\supl\config\ConfigManager.smali
 
 
 REM Fabrique le ficher classes.dex  a partir des fichier smali, android 26

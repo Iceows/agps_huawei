@@ -8,7 +8,7 @@ REM Converti les vdex en dex
 .\vdexExtractor_winx86_64\vdexExtractor.exe -f -v 4 -i .\original\PRA\gnss_supl20service_hisi.vdex 
 
 REM Genere les fichiers smali 
-java -jar baksmali-2.5.2.jar deodex -a 26 -o .\supl20\PRA\src-out2 -b  ..\..\huawei-26\framework\arm64\boot.oat ".\original\PRA\gnss_supl20service_hisi.apk_classes.dex"
+java -jar baksmali-2.5.2.jar deodex -a 26 -o .\supl20\PRA\src-out2 -b  ..\..\vendor_hi6250\sdk26\framework\arm64\boot.oat ".\original\PRA\gnss_supl20service_hisi.apk_classes.dex"
 
 REM Supprime les deux repertoires
 REM ".\zip.exe" -qd gnss_supl20service_hisi_iceows.jar "android/*" "com/*"
@@ -43,8 +43,18 @@ FOR /R ".\supl20\PRA\src-out2" %%f IN (*.smali) DO  (
    sed-4.7-x64.exe -i -e "s/Ljava\/lang\/System;->arraycopy(\[BI\[BII)V/Lcom\/android\/altair\/CopyArrayMod;->CopyArray(\[BI\[BII)V/g" %%f
 )
 
+
+REM Recopie le nouveau fichier ConfigManager avec le chemin vers system
+REM "/system/etc/gnss/config/gnss_suplconfig_hisi.xml"
+xcopy /Y .\modded\ConfigManager.smali  .\supl20\PRA\src-out2\com\android\supl\config\
+
 REM Fabrique le ficher classes.dex  a partir des fichier smali, android 26
 java -jar smali-2.5.2.jar a --api 26 .\supl20\PRA\src-out2 -o .\supl20\PRA\apk-out2\classes.dex
+
+REM Recopie le nouveau fichier AndroidManifest.xml
+xcopy /Y .\modded\AndroidManifest.xml  .\supl20\PRA\apk-out2\AndroidManifest.xml
+
+
 
 REM Recompile APK  dans le repertoire cible
 java -jar apktool_2.6.0.jar build -o .\supl20\PRA\recompiled.apk  .\supl20\PRA\apk-out2
