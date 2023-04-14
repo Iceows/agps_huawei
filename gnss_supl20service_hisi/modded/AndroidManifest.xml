@@ -10,7 +10,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </receiver>
-        <receiver android:name="com.android.supl.loc.SETLocationManager$NetworkStateBroadcastReceiver" />
+        <receiver android:enabled="true" android:exported="true" android:permission="supl20servicePermission" android:name="com.android.supl.loc.SETLocationManager$NetworkStateBroadcastReceiver" />
     </application>
 	
     <permission android:name="supl20servicePermission" android:protectionLevel="signatureOrSystem" />

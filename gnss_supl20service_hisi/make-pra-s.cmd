@@ -16,6 +16,7 @@ REM ".\zip.exe" -qd gnss_supl20service_hisi_iceows.jar "android/*" "com/*"
 REM Decompile APK, extrait le manifest dans le repertoire cible
 java -jar apktool_2.6.0.jar decode -f -o .\supl20\PRA\apk-out2 .\original\PRA\gnss_supl20service_hisi.apk
 
+pause
 
 REM ---------------------------------------------------------------------------------------
 
@@ -69,7 +70,7 @@ zipalign -f -p -v 4 .\supl20\PRA\gnss_supl20service_hisi_signed.apk .\apk\gnss_s
 
 REM envoie le fichier sur le telephone
 adb root
-adb remount rw, /system
+adb remount
 adb push .\apk\gnss_supl20service_hisi.apk /system/app/gnss_supl20service_hisi/gnss_supl20service_hisi.apk
 
 REM End
